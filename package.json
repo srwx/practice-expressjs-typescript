@@ -4,7 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "dev": "ts-node-dev --respawn --transpile-only -r tsconfig-paths/register src/index.ts"
+    "dev": "ts-node-dev --respawn --transpile-only --watch src -r tsconfig-paths/register src/index.ts"
   },
   "dependencies": {
     "express": "^4.17.2"

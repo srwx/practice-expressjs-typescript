@@ -4,6 +4,7 @@
     "module": "commonjs",
     "baseUrl": "src",
     "paths": {
+      "@routes/*": ["routes/*"],
       "@controllers/*": ["controllers/*"]
     },
     "esModuleInterop": true,

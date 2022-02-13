@@ -48,6 +48,12 @@ const users: User[] = [
     age: 21,
     languages: ["C", "Java", "Python"],
   },
+  {
+    username: "user4",
+    password: "forTest",
+    age: 18,
+    languages: ["Python"],
+  },
 ]
 
 export { posts, users }

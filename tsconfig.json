@@ -5,7 +5,8 @@
     "baseUrl": "src",
     "paths": {
       "@routes/*": ["routes/*"],
-      "@controllers/*": ["controllers/*"]
+      "@controllers/*": ["controllers/*"],
+      "@data/*": ["data/*"]
     },
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,

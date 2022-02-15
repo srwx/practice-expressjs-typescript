@@ -41,7 +41,13 @@ export const createPost = (newPost: BasePost) =>
 export const editPost = (id: string, updatePost: BasePost) => {
   const index = posts.findIndex((post) => post.id === id)
   posts[index] = {
-    id: id,
+    id,
     ...updatePost,
   }
+}
+
+// delete post
+export const deletePost = (id: string) => {
+  const index = posts.findIndex((post) => post.id === id)
+  posts.splice(index, 1)
 }

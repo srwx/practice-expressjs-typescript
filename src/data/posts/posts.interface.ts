@@ -6,5 +6,5 @@ export interface BasePost {
 }
 
 export interface Post extends BasePost {
-  id: number
+  id: string
 }

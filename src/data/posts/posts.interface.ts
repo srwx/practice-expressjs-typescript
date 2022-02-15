@@ -1,5 +1,10 @@
-export interface PostInterface {
-  id: number
+export interface BasePost {
   title: string
+  author: string
+  category: string[]
   content: string
+}
+
+export interface Post extends BasePost {
+  id: number
 }

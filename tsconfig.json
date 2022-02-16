@@ -6,7 +6,8 @@
     "paths": {
       "@routes/*": ["routes/*"],
       "@controllers/*": ["controllers/*"],
-      "@data/*": ["data/*"]
+      "@data/*": ["data/*"],
+      "@services/*": ["services/*"]
     },
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,

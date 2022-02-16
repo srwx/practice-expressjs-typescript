@@ -33,21 +33,41 @@ export const findPostsWithCategories = (categories: string[]) => {
   return results
 }
 
+// function use to check is this argument is a BasePost?
+const isBasePost = (value: any): value is BasePost => "title" in value
+
 // create post
-export const createPost = (newPost: BasePost) =>
-  posts.push({ id: uuidv4(), ...newPost })
+export const createPost = (newPost: BasePost) => {
+  if (isBasePost(newPost)) {
+    posts.push({ id: uuidv4(), ...newPost })
+  } else {
+    throw new Error("Input isn't Post.")
+  }
+}
 
 // edit post
 export const editPost = (id: string, updatePost: BasePost) => {
-  const index = posts.findIndex((post) => post.id === id)
-  posts[index] = {
-    id,
-    ...updatePost,
+  if (isBasePost(updatePost)) {
+    const index = posts.findIndex((post) => post.id === id)
+    if (index !== -1) {
+      posts[index] = {
+        id,
+        ...updatePost,
+      }
+    } else {
+      throw new Error("Can't find this post")
+    }
+  } else {
+    throw new Error("Input isn't Post.")
   }
 }
 
 // delete post
 export const deletePost = (id: string) => {
   const index = posts.findIndex((post) => post.id === id)
-  posts.splice(index, 1)
+  if (index !== -1) {
+    posts.splice(index, 1)
+  } else {
+    throw new Error("Can't find this post")
+  }
 }
